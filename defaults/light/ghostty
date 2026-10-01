@@ -1,0 +1,23 @@
+font-family="Terminess Nerd Font"
+font-size=16
+background=faf8f3
+foreground=393834
+cursor-color=393834
+selection-background=dad8d3
+selection-foreground=393834
+palette=0=faf8f3
+palette=1=a94b27
+palette=2=b3af62
+palette=3=ead086
+palette=4=78b1ba
+palette=5=c189a3
+palette=6=8cc1ae
+palette=7=393834
+palette=8=b9b8b3
+palette=9=a94b27
+palette=10=b3af62
+palette=11=ead086
+palette=12=78b1ba
+palette=13=c189a3
+palette=14=8cc1ae
+palette=15=191815

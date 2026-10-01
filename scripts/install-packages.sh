@@ -11,21 +11,18 @@ arch=(
   fnm
   pnpm
 
-  # build tools (treesitter parsers, mason packages)
   gcc
   make
   cmake
 
-  # languages; mason builds gopls/goimports with go, pyright/black/isort need python
   go
   rustup
   python
-  jdk21-openjdk # jdtls (nvim-java), kotlin
-  gradle        # kotlin language server
+  jdk21-openjdk
+  gradle
   lua
   luarocks
 
-  # neovim; mason installs servers on demand (node, unzip, curl, wget)
   neovim
   tree-sitter-cli
   ripgrep
@@ -37,7 +34,6 @@ arch=(
   curl
   wget
 
-  # yazi and its previewers
   yazi
   ffmpeg
   7zip
@@ -54,7 +50,7 @@ arch=(
   bottom
   chafa
   ghostty
-  ttf-terminus-nerd # ghostty font-family
+  ttf-terminus-nerd
 )
 
 brew_formulae=(
@@ -66,7 +62,6 @@ brew_formulae=(
   fnm
   pnpm
 
-  # gcc/clang and make come with the Xcode command line tools (needed by Homebrew)
   cmake
 
   go
@@ -103,12 +98,11 @@ brew_formulae=(
 
 brew_casks=(
   ghostty
-  font-terminess-ttf-nerd-font # ghostty font-family
+  font-terminess-ttf-nerd-font
 )
 
 case "$(uname -s)" in
   Linux)
-    # -Syu, not -S: installing against a stale package database is a partial upgrade.
     sudo pacman -Syu --needed "${arch[@]}"
     ;;
   Darwin)

@@ -1,7 +1,3 @@
--- Plugin manager glue. Required before `accme.plugins`: with a lockfile
--- present the very first `vim.pack.add()` installs every plugin in it, so
--- build hooks registered later never fire on a fresh machine.
-
 vim.api.nvim_create_autocmd("PackChanged", {
 	group = vim.api.nvim_create_augroup("accme_pack_build", { clear = true }),
 	callback = function(ev)

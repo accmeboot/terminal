@@ -14,7 +14,6 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{
 			name = "nvim_lsp",
-			-- no snippets
 			entry_filter = function(entry)
 				return entry:get_kind() ~= cmp.lsp.CompletionItemKind.Snippet
 			end,

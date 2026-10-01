@@ -1,19 +1,13 @@
--- base16 colors
-return {
-	base00 = "#17181a",
-	base01 = "#27282a",
-	base02 = "#37383a",
-	base03 = "#57585a",
-	base04 = "#b7b8bb",
-	base05 = "#d7d8db",
-	base06 = "#e7e8eb",
-	base07 = "#f7f8fb",
-	base08 = "#a94459",
-	base09 = "#e49066",
-	base0A = "#ffc593",
-	base0B = "#8eba7a",
-	base0C = "#84c0c3",
-	base0D = "#83acc8",
-	base0E = "#b18eba",
-	base0F = "#a56553",
-}
+local state = vim.env.XDG_STATE_HOME or (vim.env.HOME .. "/.local/state")
+
+local function load(polarity)
+	local ok, colors = pcall(dofile, state .. "/base16/" .. polarity .. "/nvim.lua")
+	return ok and colors or nil
+end
+
+return function()
+	return {
+		dark = load("dark"),
+		light = load("light"),
+	}
+end

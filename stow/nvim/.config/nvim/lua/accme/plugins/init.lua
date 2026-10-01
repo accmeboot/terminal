@@ -1,4 +1,3 @@
--- Order matters
 require("accme.plugins.misc")
 require("accme.plugins.cyberdream")
 require("accme.plugins.mini")

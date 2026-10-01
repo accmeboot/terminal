@@ -1,4 +1,3 @@
--- Shifts each RGB channel of a "#rrggbb" color by the given offsets.
 return function(hex, r_offset, g_offset, b_offset)
   local r = tonumber(hex:sub(2, 3), 16)
   local g = tonumber(hex:sub(4, 5), 16)

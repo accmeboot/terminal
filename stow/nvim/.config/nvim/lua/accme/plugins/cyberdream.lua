@@ -1,13 +1,14 @@
 vim.pack.add({ "https://github.com/scottmckendry/cyberdream.nvim" }, { confirm = false })
 
 local adjust_color = require("accme.local.get-color")
-local colors = require("accme.local.colors")
+local load_base16 = require("accme.local.colors")
 
-require("cyberdream").setup({
-	variant = "auto",
-	transparent = true,
+local function palette(colors)
+	if not colors then
+		return nil
+	end
 
-	colors = {
+	return {
 		bg = colors.base00,
 		bg_alt = colors.base01,
 		bg_highlight = colors.base02,
@@ -22,14 +23,35 @@ require("cyberdream").setup({
 		pink = adjust_color(colors.base08, 0, 16, 32),
 		orange = colors.base09,
 		purple = colors.base0E,
-	},
+	}
+end
 
-	saturation = 0.5,
+local function apply()
+	local base16 = load_base16()
 
-	highlights = {
-		CursorLine = { bg = "NONE", underline = true },
-		CursorLineNr = { bg = "NONE", underline = true },
-	},
+	require("cyberdream").setup({
+		variant = "auto",
+		transparent = true,
+
+		colors = {
+			dark = palette(base16.dark),
+			light = palette(base16.light),
+		},
+
+		saturation = 0.5,
+
+		highlights = {
+			CursorLine = { bg = "NONE", underline = true },
+			CursorLineNr = { bg = "NONE", underline = true },
+		},
+	})
+
+	vim.cmd("colorscheme cyberdream")
+end
+
+apply()
+
+vim.api.nvim_create_autocmd("Signal", {
+	pattern = "SIGUSR1",
+	callback = apply,
 })
-
-vim.cmd("colorscheme cyberdream")
