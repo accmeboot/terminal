@@ -1,0 +1,14 @@
+[icon]
+dirs = []
+
+[indicator.padding]
+close = "█"
+open = "█"
+
+[status.sep_left]
+close = ""
+open = ""
+
+[status.sep_right]
+close = ""
+open = ""

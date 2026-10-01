@@ -1,0 +1,3 @@
+[[opener.edit]]
+block = true
+run = 'nvim "$@"'
