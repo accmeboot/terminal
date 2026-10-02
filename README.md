@@ -25,7 +25,7 @@
 
 ## colors
 
-ghostty (font and palettes) and nvim (palettes) read from `~/.local/state/base16/{dark,light}/`, rendered by mesa-shell's `mshell build` ([mesa-shell](../mesa-shell)). `link.sh` copies `defaults/` there for any file the build hasn't rendered, so fonts and colors are the same without mesa-shell installed.
+ghostty (font and palettes) and nvim (palettes) read from `~/.local/state/mshell/{dark,light}/`, rendered by mesa-shell's `mshell build` ([mesa-shell](../mesa-shell)). `link.sh` copies `defaults/` there for any file the build hasn't rendered, so fonts and colors are the same without mesa-shell installed.
 
 ## install
 
