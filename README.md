@@ -25,7 +25,7 @@
 
 ## colors
 
-ghostty (font and palettes) and nvim (palettes) read from `~/.local/state/base16/{dark,light}/`, rendered by [base16](../base16). `link.sh` copies `defaults/` there for any file base16 hasn't rendered, so fonts and colors are the same without base16 installed.
+ghostty (font and palettes) and nvim (palettes) read from `~/.local/state/base16/{dark,light}/`, rendered by mesa-shell's `mshell build` ([mesa-shell](../mesa-shell)). `link.sh` copies `defaults/` there for any file the build hasn't rendered, so fonts and colors are the same without mesa-shell installed.
 
 ## install
 
@@ -54,5 +54,5 @@ ghostty (font and palettes) and nvim (palettes) read from `~/.local/state/base16
 - `core/options.lua` sets the leader before any plugin defines mappings
 - `core/pack.lua` loads before `plugins/`: with a lockfile present the first `vim.pack.add()` installs every plugin in it, so build hooks registered later would never fire on a fresh machine
 - `plugins/init.lua` loads plugins in dependency order, and `core/keymaps.lua` loads last since it maps plugin functions
-- cyberdream gets both base16 palettes and switches with `'background'`; on `SIGUSR1` (sent by `base16 build`) it reloads them
+- cyberdream gets both base16 palettes and switches with `'background'`; on `SIGUSR1` (sent by `mshell build`) it reloads them
 - mini.pick's pickers call `rg` with only basic arguments, so `ripgreprc` (via `RIPGREP_CONFIG_PATH`) adds `--hidden` and the ignores
