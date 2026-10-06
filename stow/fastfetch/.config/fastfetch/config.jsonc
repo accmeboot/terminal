@@ -14,7 +14,10 @@
     }
   },
   "logo": {
-    "type": "none"
+    "type": "small",
+    "padding": {
+      "top": 1
+    }
   },
   "modules": [
     {
