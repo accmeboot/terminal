@@ -29,7 +29,8 @@ keymap.set("n", "<leader>}", ":resize +5<CR>")
 
 keymap.set("x", "<leader>p", '"_dP')
 
-keymap.set("n", "<leader>e", ":Oil<CR>")
+keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>")
+keymap.set("n", "<leader>E", ":Oil<CR>")
 
 local function toggle_fugitive()
 	local bufnr = vim.api.nvim_get_current_buf()

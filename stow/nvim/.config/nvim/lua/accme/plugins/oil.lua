@@ -1,6 +1,8 @@
 vim.pack.add({ "https://github.com/stevearc/oil.nvim" }, { confirm = false })
 
 require("oil").setup({
+	-- nvim-tree handles directories; oil is opened explicitly via :Oil
+	default_file_explorer = false,
 	columns = { "icon" },
 	keymaps = {
 		["q"] = "actions.close",

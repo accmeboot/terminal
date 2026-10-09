@@ -4,6 +4,7 @@ require("accme.plugins.mini")
 require("accme.plugins.nvim-cmp")
 require("accme.plugins.treesitter")
 require("accme.plugins.oil")
+require("accme.plugins.nvim-tree")
 require("accme.plugins.vim-fugitive")
 
 require("accme.plugins.lang.mason")
