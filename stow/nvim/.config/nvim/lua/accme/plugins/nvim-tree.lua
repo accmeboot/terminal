@@ -27,10 +27,18 @@ require("nvim-tree").setup({
 	update_focused_file = { enable = true },
 	view = {
 		side = "left",
-		width = 35,
+		width = {
+			min = 35,
+			max = "40%",
+		},
 	},
 	renderer = {
 		group_empty = true,
+		full_name = true,
+		-- parent/project instead of the full path
+		root_folder_label = function(path)
+			return vim.fn.fnamemodify(path, ":h:t") .. "/" .. vim.fn.fnamemodify(path, ":t")
+		end,
 		decorators = { "Git", "Open", "Hidden", "Modified", "Bookmark", "Diagnostics", "Copied", "Cut", IconGap },
 		icons = {
 			git_placement = "right_align",
